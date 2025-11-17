@@ -1,4 +1,4 @@
-package lt.jonas.homework.playsite.model.api.response;
+package lt.jonas.homework.playsite.model.response;
 
 import java.time.ZonedDateTime;
 

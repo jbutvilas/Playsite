@@ -2,7 +2,7 @@ package lt.jonas.homework.playsite.mapper;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import lt.jonas.homework.playsite.model.api.request.KidRequest;
+import lt.jonas.homework.playsite.model.request.KidRequest;
 import lt.jonas.homework.playsite.model.entity.Kid;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

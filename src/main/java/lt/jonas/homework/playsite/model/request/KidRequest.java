@@ -1,4 +1,4 @@
-package lt.jonas.homework.playsite.model.api.request;
+package lt.jonas.homework.playsite.model.request;
 
 
 import jakarta.validation.constraints.Max;

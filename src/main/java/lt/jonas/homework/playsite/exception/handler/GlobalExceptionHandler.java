@@ -3,7 +3,7 @@ package lt.jonas.homework.playsite.exception.handler;
 import lt.jonas.homework.playsite.exception.model.PlaySiteOutOfCapacityException;
 import lt.jonas.homework.playsite.exception.model.ResourceNotFoundException;
 import lt.jonas.homework.playsite.exception.model.TicketUsedException;
-import lt.jonas.homework.playsite.model.api.response.ErrorResponseDto;
+import lt.jonas.homework.playsite.model.response.ErrorResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConversionException;

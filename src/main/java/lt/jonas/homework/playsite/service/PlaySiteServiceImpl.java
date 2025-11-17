@@ -6,10 +6,10 @@ import lt.jonas.homework.playsite.exception.model.ResourceNotFoundException;
 import lt.jonas.homework.playsite.exception.model.TicketUsedException;
 import lt.jonas.homework.playsite.mapper.AttractionsMapper;
 import lt.jonas.homework.playsite.mapper.KidsMapper;
-import lt.jonas.homework.playsite.model.api.request.KidRequest;
-import lt.jonas.homework.playsite.model.api.request.PlaySiteRequest;
-import lt.jonas.homework.playsite.model.api.response.TotalVisitorsResponseDto;
-import lt.jonas.homework.playsite.model.api.response.UtilisationResponseDto;
+import lt.jonas.homework.playsite.model.request.KidRequest;
+import lt.jonas.homework.playsite.model.request.PlaySiteRequest;
+import lt.jonas.homework.playsite.model.response.TotalVisitorsResponseDto;
+import lt.jonas.homework.playsite.model.response.UtilisationResponseDto;
 import lt.jonas.homework.playsite.model.entity.Kid;
 import lt.jonas.homework.playsite.model.entity.PlaySite;
 import lt.jonas.homework.playsite.repository.KidRepository;
@@ -22,7 +22,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class PlaySiteServiceImpl implements PlaySiteService{
+public class PlaySiteServiceImpl implements PlaySiteService {
 
     private final PlaySiteRepository playSiteRepository;
     private final KidRepository kidRepository;

@@ -1,9 +1,9 @@
 package lt.jonas.homework.playsite.service;
 
-import lt.jonas.homework.playsite.model.api.request.KidRequest;
-import lt.jonas.homework.playsite.model.api.request.PlaySiteRequest;
-import lt.jonas.homework.playsite.model.api.response.TotalVisitorsResponseDto;
-import lt.jonas.homework.playsite.model.api.response.UtilisationResponseDto;
+import lt.jonas.homework.playsite.model.request.KidRequest;
+import lt.jonas.homework.playsite.model.request.PlaySiteRequest;
+import lt.jonas.homework.playsite.model.response.TotalVisitorsResponseDto;
+import lt.jonas.homework.playsite.model.response.UtilisationResponseDto;
 import lt.jonas.homework.playsite.model.entity.Kid;
 import lt.jonas.homework.playsite.model.entity.PlaySite;
 
