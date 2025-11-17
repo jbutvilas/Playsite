@@ -1,6 +1,7 @@
 package lt.jonas.homework.playsite.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lt.jonas.homework.playsite.model.api.request.KidRequest;
 import lt.jonas.homework.playsite.model.api.request.PlaySiteRequest;
 import lt.jonas.homework.playsite.model.api.response.TotalVisitorsResponseDto;
@@ -16,13 +17,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/playsites")
+@RequiredArgsConstructor
 public class PlaySiteController {
 
     private final PlaySiteService playSiteService;
-
-    public PlaySiteController(PlaySiteService playSiteService) {
-        this.playSiteService = playSiteService;
-    }
 
     @GetMapping
     public List<PlaySite> getAllPlaySites() {
