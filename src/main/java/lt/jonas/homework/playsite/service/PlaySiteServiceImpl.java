@@ -82,7 +82,7 @@ public class PlaySiteServiceImpl implements PlaySiteService{
 
         if (playSite.getKids().contains(kid)) {
             playSite.removeKid(kid);
-            getNextKidInQueue(playSite).ifPresent(playSite::addKid);
+            pullNextKidInQueue(playSite).ifPresent(playSite::addKid);
         } else if (playSite.getQueue().contains(ticketNumber)) {
             playSite.getQueue().remove(ticketNumber);
             kidRepository.delete(kid);
@@ -119,7 +119,7 @@ public class PlaySiteServiceImpl implements PlaySiteService{
         int availableCapacity = newCapacity - currentKidCount;
 
         for (int i = 0; i < availableCapacity; i++) {
-            var optionalKid = getNextKidInQueue(playSite);
+            var optionalKid = pullNextKidInQueue(playSite);
             if (optionalKid.isEmpty()) {
                 break;
             }
@@ -129,27 +129,17 @@ public class PlaySiteServiceImpl implements PlaySiteService{
     }
 
     /**
-     * Retrieves the next kid in the queue for a play site.
+     * Pulls next kid in the queue for a play site.
      *
      * @param playSite the play site
      * @return an optional containing the next kid in the queue, if present
      */
-    private Optional<Kid> getNextKidInQueue(PlaySite playSite) {
-        return dequeueNext(playSite).map(this::getKid);
-    }
-
-    /**
-     * Dequeues the next ticket number from the play site's queue.
-     *
-     * @param playSite the play site
-     * @return an optional containing the next ticket number, if present
-     */
-    private Optional<Long> dequeueNext(PlaySite playSite) {
+    private Optional<Kid> pullNextKidInQueue(PlaySite playSite) {
         var queue = playSite.getQueue();
         if (!queue.isEmpty()) {
             var nextTicket = queue.iterator().next();
             queue.remove(nextTicket);
-            return Optional.of(nextTicket);
+            return Optional.of(getKid(nextTicket));
         }
         return Optional.empty();
     }
